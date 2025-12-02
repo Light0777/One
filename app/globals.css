@@ -24,3 +24,46 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.animate-ping {
+  animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Custom font classes using next/font variables */
+.font-anton {
+  font-family: var(--font-anton);
+}
+
+.font-geistMonoLocal {
+  font-family: var(--font-geistmono-local);
+}
+
+.font-geist {
+  font-family: var(--font-geist-sans);
+}
+
+.font-geistMono {
+  font-family: var(--font-geist-mono);
+}
+
+/* Add to globals.css */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+button, a {
+  cursor: pointer;
+}
