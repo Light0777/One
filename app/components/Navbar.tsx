@@ -179,7 +179,7 @@ const Navbar = () => {
                 <div className="max-w-full mx-auto flex items-center justify-between relative">
                     {/* Logo */}
                     <div className="z-60">
-                        <a href="#" className="text-2xl font-bold tracking-wider text-black">
+                        <a href="#" className="text-xl font-normal md:text-2xl md:font-bold tracking-wider text-black">
                             <span className="text-white">oneGrow.Studio</span>
                         </a>
                     </div>
