@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Navbar from "./components/Navbar";
+import BrandsShowcase from "./components/BrandsShowcase"
+import AboutUs from "./components/AboutUs"
 
 export default function Home() {
   return (
@@ -7,7 +9,7 @@ export default function Home() {
       <main className="w-full">
         <Navbar />
         {/* Hero Section */}
-        <div className="h-0 sm:h-40"></div>
+        <div className="h-20 sm:h-40"></div>
         <div className="h-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-20 lg:pt-24">
 
           {/* Available Badge */}
@@ -43,6 +45,8 @@ export default function Home() {
             quality={100}
           />
         </div>
+        <BrandsShowcase />
+        <AboutUs />
       </main>
     </div>
   );
