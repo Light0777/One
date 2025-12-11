@@ -30,7 +30,7 @@ const Footer = () => {
             {/* Top Section - Navigation Links & Email */}
             <div 
                 ref={contentRef}
-                className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 w-full"
+                className="max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 w-full"
             >
                 <div className="flex flex-col lg:flex-row justify-between sm:items-center">
                     {/* Right - Navigation Links */}
@@ -76,7 +76,7 @@ const Footer = () => {
                             href="mailto:oneGrow.Studio@gmail.com" 
                             className="text-white transition-colors font-anton duration-300 text-xl sm:text-4xl inline-block footer-link"
                         >
-                            oneGrow.Studio@gmail.com
+                            10Billion.Studio@gmail.com
                         </a>
                     </div>
                 </div>
@@ -84,16 +84,16 @@ const Footer = () => {
 
             {/* Bottom Section - Big Brand Name */}
             <div className="border-t border-gray-200 transition-colors duration-300 mt-auto">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div className="max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
                     <div className="text-center">
                         <h1 
                             ref={brandRef}
                             className="text-5xl sm:text-8xl lg:text-9xl text-white font-anton transition-colors duration-300 footer-link font-bold tracking-normal"
                         >
-                            oneGrow.Studio
+                            10Billion.Studio
                         </h1>
                         <p className="mt-8 text-gray-500 text-sm">
-                            © {new Date().getFullYear()} OneGrow.Studio. All rights reserved.
+                            © {new Date().getFullYear()} 10Billion.Studio. All rights reserved.
                         </p>
                     </div>
                 </div>

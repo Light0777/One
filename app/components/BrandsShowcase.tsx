@@ -149,7 +149,7 @@ export default function SimplePlatformsScroll() {
 
   return (
     <section className="py-0 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-6 md:mb-24">
           <p className="text-xs sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto mt-1">

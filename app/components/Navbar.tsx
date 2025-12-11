@@ -78,9 +78,9 @@ const Navbar = () => {
     useEffect(() => {
         const handleScroll = () => {
             if (isMenuOpen) return; // Don't hide/show navbar when menu is open
-            
+
             const currentScrollY = window.scrollY;
-            
+
             if (currentScrollY < 100) {
                 // At top of page, always show navbar
                 setShowNavbar(true);
@@ -91,12 +91,12 @@ const Navbar = () => {
                 // Scrolling up - show navbar
                 setShowNavbar(true);
             }
-            
+
             setLastScrollY(currentScrollY);
         };
 
         window.addEventListener('scroll', handleScroll, { passive: true });
-        
+
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
@@ -127,11 +127,7 @@ const Navbar = () => {
                 }, 0)
                 .to(spans[1], {
                     duration: 0.3,
-                    opacity: 0,
-                }, 0)
-                .to(spans[2], {
-                    duration: 0.3,
-                    y: -10,
+                    y: -1,
                     rotate: -45,
                 }, 0);
         }
@@ -216,10 +212,6 @@ const Navbar = () => {
                 }, 0)
                 .to(spans[1], {
                     duration: 0.3,
-                    opacity: 1,
-                }, 0)
-                .to(spans[2], {
-                    duration: 0.3,
                     y: 0,
                     rotate: 0,
                 }, 0);
@@ -256,15 +248,13 @@ const Navbar = () => {
             {/* Main Navbar */}
             <nav
                 ref={navRef}
-                className={`fixed top-0 left-0 right-0 z-100 px-4 py-2 bg-transparent transition-transform duration-300 ${
-                    showNavbar ? 'translate-y-0' : '-translate-y-full'
-                }`}
+                className={`fixed top-0 left-0 right-0 z-100 px-4 py-2 no-scrollbar bg-transparent transition-transform duration-300 ${showNavbar ? 'translate-y-0' : '-translate-y-full'
+                    }`}
             >
                 {/* Fading outward shadow - placed below navbar */}
                 <div
-                    className={`absolute left-0 top-0 right-0 h-16 pointer-events-none transition-opacity duration-300 ${
-                        isMenuOpen ? 'opacity-0' : 'opacity-100'
-                    }`}
+                    className={`absolute left-0 top-0 right-0 h-16 pointer-events-none transition-opacity duration-300 ${isMenuOpen ? 'opacity-0' : 'opacity-100'
+                        }`}
                     style={{
                         background: 'linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 100%)'
                     }}
@@ -273,8 +263,8 @@ const Navbar = () => {
                 <div className="max-w-full mx-auto flex items-center justify-between relative">
                     {/* Logo */}
                     <div className="z-60">
-                        <a href="#" className="text-xl font-normal md:text-2xl md:font-bold tracking-wider text-black">
-                            <span className="text-white">oneGrow.Studio</span>
+                        <a href="#" className="text-xl font-bold font-anton md:text-2xl md:font-bold tracking-wide text-black">
+                            <span className="text-white">10B/10</span>
                         </a>
                     </div>
 
@@ -283,9 +273,7 @@ const Navbar = () => {
                         ref={buttonRef}
                         onClick={toggleMenu}
                         className="relative z-80 w-12 h-12 flex flex-col items-center justify-center gap-2 group"
-                        aria-label="Toggle menu"
-                    >
-                        <span className="block h-0.5 w-8 bg-white transition-all duration-300" />
+                        aria-label="Toggle menu">
                         <span className="block h-0.5 w-8 bg-white transition-all duration-300" />
                         <span className="block h-0.5 w-8 bg-white transition-all duration-300" />
                     </button>
@@ -302,23 +290,21 @@ const Navbar = () => {
             {/* Full Screen Menu Content */}
             <div
                 ref={menuRef}
-                className={`fixed inset-0 z-50 ${
-                    isMenuOpen ? 'pointer-events-auto' : 'opacity-0 pointer-events-none'
-                }`}
-                style={isMenuOpen ? {} : { display: 'none' }}
-            >
-                <div className="max-w-7xl mx-auto px-6 py-12 h-full flex flex-col overflow-y-auto">
+                className={`fixed inset-0 z-50 no-scrollbar ${isMenuOpen ? 'pointer-events-auto' : 'opacity-0 pointer-events-none'
+                    }`}
+                style={isMenuOpen ? {} : { display: 'none' }}>
+                <div className="max-w-6xl mx-auto px-6 py-10 h-full flex flex-col overflow-y-auto">
                     {/* Top Section with Logo */}
                     <div className="mb-12"></div>
 
                     {/* Main Content Grid */}
-                    <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-8 justify-center items-center">
                         {/* Left Column - Navigation */}
                         <div className="space-y-8 md:space-y-15">
                             {/* WORK Section */}
                             <div>
                                 <h3 className="text-sm uppercase tracking-widest text-gray-400 mb-2 md:mb-8">WORK</h3>
-                                <ul className="space-y-1 md:space-y-5">
+                                <ul className="space-y-1 md:space-y-2 2xl:space-y-6">
                                     {workItems.map((item, index) => (
                                         <li key={index} className="overflow-hidden">
                                             <a
@@ -326,7 +312,7 @@ const Navbar = () => {
                                                     menuItemsRef.current[index] = el;
                                                 }}
                                                 href={item.href}
-                                                className="block text-lg md:text-4xl font-normal md:font-bold text-white hover:text-gray-300 transition-colors duration-300 cursor-pointer"
+                                                className="block text-lg md:text-3xl 2xl:text-4xl font-normal md:font-bold text-white hover:text-gray-300 transition-colors duration-300 cursor-pointer"
                                                 onClick={handleLinkClick}
                                                 style={{ willChange: 'transform, opacity' }}
                                             >
@@ -340,7 +326,7 @@ const Navbar = () => {
                             {/* STUDIO Section */}
                             <div>
                                 <h3 className="text-sm uppercase tracking-widest text-gray-400 mb-3 md:mb-10">STUDIO</h3>
-                                <ul className="space-y-1 md:space-y-5">
+                                <ul className="space-y-1 md:space-y-2 2xl:space-y-6">
                                     {studioItems.map((item, index) => (
                                         <li key={index} className="overflow-hidden">
                                             <a
@@ -348,7 +334,7 @@ const Navbar = () => {
                                                     menuItemsRef.current[workItems.length + index] = el;
                                                 }}
                                                 href={item.href}
-                                                className="block text-lg md:text-4xl font-normal md:font-bold text-white hover:text-gray-300 transition-colors duration-300 cursor-pointer"
+                                                className="block text-lg md:text-3xl 2xl:text-4xl font-normal md:font-bold text-white hover:text-gray-300 transition-colors duration-300 cursor-pointer"
                                                 onClick={handleLinkClick}
                                                 style={{ willChange: 'transform, opacity' }}
                                             >
@@ -361,16 +347,16 @@ const Navbar = () => {
                         </div>
 
                         {/* Right Column - Blog & About */}
-                        <div className="space-y-12">
+                        <div className="space-y-6">
                             {/* Blog Posts */}
                             <div className='hidden sm:block'>
                                 <h3 className="text-sm uppercase tracking-widest text-gray-400 mb-6">BLOGS</h3>
-                                <div className="space-y-8">
+                                <div className="space-y-3 2xl:space-y-6 ">
                                     {blogPosts.map((post) => (
                                         <div key={post.id} className="group">
                                             <div className="flex items-start space-x-4">
                                                 {/* Placeholder Image */}
-                                                <div className="relative w-24 h-24 shrink-0 rounded-lg overflow-hidden bg-gray-800">
+                                                <div className="relative w-15 h-15 2xl:w-24 2xl:h-24 shrink-0 rounded-lg overflow-hidden bg-gray-800">
                                                     <div className="absolute inset-0 bg-linear-to-br from-gray-700 to-gray-900 flex items-center justify-center">
                                                         <span className="text-white text-xs font-medium">BLOG</span>
                                                     </div>
@@ -378,10 +364,10 @@ const Navbar = () => {
 
                                                 <div className="flex-1">
                                                     <div className="text-xs text-gray-500 mb-1">{post.date}</div>
-                                                    <h4 className="text-lg font-semibold text-white group-hover:text-gray-300 transition-colors">
+                                                    <h4 className="text-sm 2xl:text-lg font-semibold text-white group-hover:text-gray-300 transition-colors">
                                                         {post.title}
                                                     </h4>
-                                                    <p className="text-sm text-gray-400 mt-1">
+                                                    <p className="text-xs 2xl:text-sm text-gray-400 mt-1">
                                                         {post.excerpt}
                                                     </p>
                                                 </div>
@@ -395,7 +381,7 @@ const Navbar = () => {
                             <div className="pt-8 border-t border-gray-800">
                                 <div className="mb-6">
                                     <p className="text-white text-lg leading-relaxed">
-                                        Hi, I'm the founder & CEO of OneGrow.Studio — we build custom dashboards that help businesses work faster, smarter, and with complete clarity.
+                                        Hi, I'm the founder & CEO of 10Billion.Studio — we build custom dashboards that help businesses work faster, smarter, and with complete clarity.
                                     </p>
                                 </div>
 

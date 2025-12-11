@@ -7,8 +7,8 @@ const FAQPage = () => {
 
     const faqs = [
         {
-            question: "What is OneGrow.Studio and what services do you offer?",
-            answer: "OneGrow.Studio specializes in building custom dashboards and SaaS solutions that help businesses work faster, smarter, and with complete clarity. We offer end-to-end development services including custom dashboard design, SaaS application development, data visualization solutions, and business intelligence tools tailored to your specific needs."
+            question: "What is 10Billion.Studio and what services do you offer?",
+            answer: "10Billion.Studio specializes in building custom dashboards and SaaS solutions that help businesses work faster, smarter, and with complete clarity. We offer end-to-end development services including custom dashboard design, SaaS application development, data visualization solutions, and business intelligence tools tailored to your specific needs."
         },
         {
             question: "How long does it take to build a custom dashboard?",
@@ -42,7 +42,7 @@ const FAQPage = () => {
 
     return (
         <div className="min-h-screen bg-white grid items-center">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+            <div className="max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
                     {/* Left Column - Title */}
                     <div className="lg:w-2/5">

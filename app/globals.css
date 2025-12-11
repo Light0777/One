@@ -67,3 +67,25 @@ html, body {
 button, a {
   cursor: pointer;
 }
+
+/* Change text selection color globally */
+::selection {
+  background-color: #fcd34d; /* yellow-300 */
+  color: #1f2937; /* gray-900 */
+}
+
+/* For Firefox */
+::-moz-selection {
+  background-color: #fcd34d;
+  color: #1f2937;
+}
+
+/* Hide scrollbar for Chrome, Safari, Edge */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.no-scrollbar {
+  scrollbar-width: none;
+}

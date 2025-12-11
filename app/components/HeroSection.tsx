@@ -1,4 +1,4 @@
-// components/HeroSection.tsx - SIMPLIFIED VERSION
+// components/HeroSection.tsx - UPDATED VERSION
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -12,13 +12,15 @@ gsap.registerPlugin(ScrollTrigger);
 export default function HeroSection() {
     const containerRef = useRef<HTMLDivElement>(null);
     const aboutRef = useRef<HTMLDivElement>(null);
+    const customHeadingRef = useRef<HTMLHeadingElement>(null);
     const [bgProgress, setBgProgress] = useState(0);
 
     useEffect(() => {
-        if (!containerRef.current || !aboutRef.current) return;
+        if (!containerRef.current || !aboutRef.current || !customHeadingRef.current) return;
 
         const container = containerRef.current;
         const aboutHeight = aboutRef.current.clientHeight;
+        const customHeading = customHeadingRef.current;
 
         // Determine if mobile based on viewport width
         const isMobile = window.innerWidth < 768;
@@ -56,16 +58,14 @@ export default function HeroSection() {
                         duration: 0.1,
                     });
 
-                    // Update hero section text colors
+                    // Update ONLY the "CUSTOM" heading color
+                    // Exclude the gradient "DASHBOARDS." heading
                     const heroTextColor = adjustedProgress > 0.5 ? "#000000" : "#ffffff";
 
-                    // Hero headings
-                    const heroHeadings = container.querySelectorAll('h1');
-                    heroHeadings.forEach(heading => {
-                        gsap.to(heading, {
-                            color: heroTextColor,
-                            duration: 0.3,
-                        });
+                    // Target only the customHeadingRef
+                    gsap.to(customHeading, {
+                        color: heroTextColor,
+                        duration: 0.3,
                     });
                 }
             }
@@ -80,7 +80,7 @@ export default function HeroSection() {
     // AboutUs data
     const leftLines = [
         {
-            text: "Hey, we're oneGrow.Studioand we help businesses stop drowning in spreadsheets.",
+            text: "Hey, we're 10Billion.Studio and we help businesses stop drowning in spreadsheets.",
             isBold: true
         },
         {
@@ -114,8 +114,8 @@ export default function HeroSection() {
     return (
         <div ref={containerRef} className="relative bg-black">
             {/* Hero Content */}
-            <div className="h-20 sm:h-40"></div>
-            <div className="h-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-20 lg:pt-24">
+            <div className="h-20 sm:h-30 2xl:h-50"></div>
+            <div className="h-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-20 lg:pt-0">
 
                 {/* Available Badge */}
                 <div className="available-badge flex items-center justify-center gap-2 mb-4 sm:mb-6 md:mb-8 p-3 rounded-full">
@@ -131,11 +131,13 @@ export default function HeroSection() {
                 </div>
 
                 {/* Main Headings */}
-                <div className="mt-4 sm:mt-6 md:mt-8">
-                    <h1 className="scroll-m-20 text-center text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-normal tracking-normal font-anton leading-tight sm:leading-none text-white">
+                <div className="mt-4 sm:mt-6 md:mt-8 grid gap-3">
+                    {/* Only add ref to the "CUSTOM" heading */}
+                    <h1 ref={customHeadingRef} className="scroll-m-20 text-center text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-normal tracking-normal font-anton leading-tight sm:leading-none text-white">
                         CUSTOM
                     </h1>
-                    <h1 className="scroll-m-20 text-center text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-normal tracking-normal font-anton -mt-5 sm:-mt-2 leading-tight sm:leading-none text-white">
+                    {/* Gradient heading - no color changes */}
+                    <h1 className="scroll-m-20 text-center bg-yellow-300 rounded-xl text-black text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-normal tracking-normal font-anton -mt-5 sm:-mt-2 leading-tight sm:leading-none px-4 py-1 selection:bg-transparent w-fit mx-auto">
                         DASHBOARDS.
                     </h1>
                 </div>
@@ -143,7 +145,7 @@ export default function HeroSection() {
 
             {/* Dashboard Image */}
             <div className="grid justify-center items-center relative p-5">
-                <div className="relative w-full max-w-4xl mx-auto">
+                <div className="relative w-full">
                     <Image
                         src="/hero.png"
                         alt="Dashboard preview"
@@ -159,7 +161,7 @@ export default function HeroSection() {
 
             {/* AboutUs Content */}
             <div ref={aboutRef} className="min-h-screen flex items-center justify-center">
-                <div className="relative z-10 w-full max-w-7xl px-4 sm:px-6">
+                <div className="relative z-10 w-full max-w-6xl 2xl:max-w-7xl px-4 sm:px-6">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
                         {/* Left Column */}
                         <div className="space-y-2 lg:space-y-5">
@@ -167,8 +169,8 @@ export default function HeroSection() {
                                 <div
                                     key={lineIndex}
                                     className={`leading-relaxed md:leading-snug ${line.isBold
-                                        ? 'text-md sm:text-lg md:text-xl lg:text-2xl font-bold tracking-tight'
-                                        : 'text-sm sm:text-md md:text-lg lg:text-xl font-light'
+                                        ? 'text-lg md:text-xl lg:text-4xl font-bold tracking-tight'
+                                        : 'text-md md:text-lg lg:text-3xl font-light'
                                         }`}
                                 >
                                     {line.text.split(' ').map((word, wordIndex) => (
