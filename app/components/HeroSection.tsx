@@ -6,6 +6,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import BrandsShowcase from "./BrandsShowcase";
+import CaseStudy from "./CaseStudy"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -144,21 +145,21 @@ export default function HeroSection() {
             </div>
 
             {/* Dashboard Image */}
-            <div className="grid justify-center items-center relative p-5">
+            <div className="grid justify-center items-center relative p-5 2xl:pt-20">
                 <div className="relative w-full">
                     <Image
                         src="/hero.png"
                         alt="Dashboard preview"
                         width={1080}
                         height={1920}
-                        className="rounded-xl object-contain shadow-2xl"
+                        className="rounded-xl object-contain shadow-2xl 2xl:scale-108"
                         quality={100}
                         priority
                     />
-                    <div className="absolute inset-0 rounded-xl bg-linear-to-t from-black/20 to-transparent"></div>
                 </div>
             </div>
-
+            {/* Case Study Section */}
+        <CaseStudy />
             {/* AboutUs Content */}
             <div ref={aboutRef} className="min-h-screen flex items-center justify-center">
                 <div className="relative z-10 w-full max-w-6xl 2xl:max-w-7xl px-4 sm:px-6">

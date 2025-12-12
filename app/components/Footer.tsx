@@ -43,7 +43,7 @@ const Footer = () => {
                                     <li key={index}>
                                         <a 
                                             href={link.href} 
-                                            className="text-white hover:text-black transition-colors duration-300 text-lg footer-link"
+                                            className="text-white transition-colors duration-300 text-lg footer-link"
                                         >
                                             {link.name}
                                         </a>
