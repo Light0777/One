@@ -6,7 +6,6 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import BrandsShowcase from "./BrandsShowcase";
-import ShowCase from "./ShowCase";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -141,52 +140,18 @@ export default function HeroSection() {
             </div>
 
             {/* Dashboard Image */}
-            <div className="grid md:flex justify-center items-start relative p-5 gap-2 lg:gap-5">
-                <div className="relative">
+            <div className="grid justify-center items-center relative p-5">
+                <div className="relative w-full">
                     <Image
                         src="/case1.png"
                         alt="Dashboard preview"
                         width={1080}
                         height={1920}
-                        className="rounded-xl sm:rounded-3xl"
-                        quality={100}
-                    />
-                </div>
-                <div className="flex md:grid md:grid-cols-1 gap-2 lg:gap-3">
-                    {["Group 9", "Group 11", "Group 22"].map((img) => (
-                        <Image
-                            key={img}
-                            src={`/dashcomp/${img}.png`}
-                            alt="Dashboard preview"
-                            width={120}
-                            height={120}
-                            className="rounded-xl w-full md:w-[200]"
-                            quality={100}
-                        />
-                    ))}
-                </div>
-
-                <div>
-                    <Image
-                        src="/dashcomp/Group 17.png"
-                        alt="Dashboard preview"
-                        width={330}
-                        height={180}
-                        className="rounded-3xl hidden md:block"
-                        quality={100}
-                    />
-                    <Image
-                        src="/dashcomp/Group 172.png"
-                        alt="Dashboard preview"
-                        width={380}
-                        height={180}
-                        className="rounded-3xl block md:hidden w-full"
+                        className="rounded-xl object-contain shadow-2xl"
                         quality={100}
                     />
                 </div>
             </div>
-
-            <ShowCase />
 
             {/* AboutUs Content */}
             <div ref={aboutRef} className=" h-auto flex items-center justify-center">
