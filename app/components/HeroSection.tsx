@@ -6,6 +6,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import BrandsShowcase from "./BrandsShowcase";
+import ShowCase from "./ShowCase";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -114,7 +115,7 @@ export default function HeroSection() {
     return (
         <div ref={containerRef} className="relative bg-black">
             {/* Hero Content */}
-            <div className="h-20 sm:h-30 2xl:h-50"></div>
+            <div className="h-20 sm:h-30 2xl:h-20"></div>
             <div className="h-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-20 lg:pt-0">
 
                 {/* Available Badge */}
@@ -134,43 +135,71 @@ export default function HeroSection() {
                 <div className="mt-4 sm:mt-6 md:mt-8 grid gap-3">
                     {/* Only add ref to the "CUSTOM" heading */}
                     <h1 ref={customHeadingRef} className="scroll-m-20 text-center text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-normal tracking-normal font-anton leading-tight sm:leading-none text-white">
-                        CUSTOM
-                    </h1>
-                    {/* Gradient heading - no color changes */}
-                    <h1 className="scroll-m-20 text-center bg-yellow-300 rounded-xl text-black text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-normal tracking-normal font-anton -mt-5 sm:-mt-2 leading-tight sm:leading-none px-4 py-1 selection:bg-transparent w-fit mx-auto">
-                        DASHBOARDS.
+                        CUSTOM DASHBOARDS.
                     </h1>
                 </div>
             </div>
 
             {/* Dashboard Image */}
-            <div className="grid justify-center items-center relative p-5">
-                <div className="relative w-full">
+            <div className="grid md:flex justify-center items-start relative p-5 gap-2 lg:gap-5">
+                <div className="relative">
                     <Image
-                        src="/hero.png"
+                        src="/case1.png"
                         alt="Dashboard preview"
                         width={1080}
                         height={1920}
-                        className="rounded-xl object-contain shadow-2xl"
+                        className="rounded-xl sm:rounded-3xl"
                         quality={100}
-                        priority
                     />
-                    <div className="absolute inset-0 rounded-xl bg-linear-to-t from-black/20 to-transparent"></div>
+                </div>
+                <div className="flex md:grid md:grid-cols-1 gap-2 lg:gap-3">
+                    {["Group 9", "Group 11", "Group 22"].map((img) => (
+                        <Image
+                            key={img}
+                            src={`/dashcomp/${img}.png`}
+                            alt="Dashboard preview"
+                            width={120}
+                            height={120}
+                            className="rounded-xl w-full md:w-[200]"
+                            quality={100}
+                        />
+                    ))}
+                </div>
+
+                <div>
+                    <Image
+                        src="/dashcomp/Group 17.png"
+                        alt="Dashboard preview"
+                        width={330}
+                        height={180}
+                        className="rounded-3xl hidden md:block"
+                        quality={100}
+                    />
+                    <Image
+                        src="/dashcomp/Group 172.png"
+                        alt="Dashboard preview"
+                        width={380}
+                        height={180}
+                        className="rounded-3xl block md:hidden w-full"
+                        quality={100}
+                    />
                 </div>
             </div>
 
+            <ShowCase />
+
             {/* AboutUs Content */}
-            <div ref={aboutRef} className="min-h-screen flex items-center justify-center">
-                <div className="relative z-10 w-full max-w-6xl 2xl:max-w-7xl px-4 sm:px-6">
+            <div ref={aboutRef} className=" h-auto flex items-center justify-center">
+                <div className="relative z-10 w-full px-4 sm:px-6 sm:py-40">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
                         {/* Left Column */}
                         <div className="space-y-2 lg:space-y-5">
                             {leftLines.map((line, lineIndex) => (
                                 <div
                                     key={lineIndex}
-                                    className={`leading-relaxed md:leading-snug ${line.isBold
-                                        ? 'text-lg md:text-xl lg:text-4xl font-bold tracking-tight'
-                                        : 'text-md md:text-lg lg:text-3xl font-light'
+                                    className={`leading-relaxed md:leading-snug max-w-150 ${line.isBold
+                                        ? 'text-lg md:text-xl lg:text-3xl font-bold tracking-tight'
+                                        : 'text-md md:text-lg lg:text-xl font-light'
                                         }`}
                                 >
                                     {line.text.split(' ').map((word, wordIndex) => (
@@ -189,7 +218,7 @@ export default function HeroSection() {
                         {/* Right Column */}
                         <div className="space-y-4 lg:space-y-8">
                             {/* Right text line */}
-                            <div className="leading-relaxed md:leading-snug text-sm sm:text-md md:text-lg lg:text-xl font-light">
+                            <div className="leading-relaxed md:leading-snug text-sm sm:text-md md:text-lg font-light max-w-150">
                                 {rightLine.text.split(' ').map((word, wordIndex) => (
                                     <span
                                         key={`right-${wordIndex}`}

@@ -42,10 +42,10 @@ const FAQPage = () => {
 
     return (
         <div className="min-h-screen bg-white grid items-center">
-            <div className="max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+            <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
                     {/* Left Column - Title */}
-                    <div className="lg:w-2/5">
+                    <div className="lg:w-1/2">
                         <h1 className="text-md sm:text-lg md:text-xl lg:text-2xl font-bold tracking-tight text-black mb-3 sm:mb-6">
                             Frequently Asked Questions
                         </h1>
@@ -71,7 +71,7 @@ const FAQPage = () => {
                     </div>
 
                     {/* Right Column - FAQs */}
-                    <div className="lg:w-3/5">
+                    <div className="lg:w-1/2">
                         <div className="divide-y divide-gray-100">
                             {faqs.map((faq, index) => (
                                 <div key={index} className="py-4 sm:py-7 first:pt-0 last:pb-0">

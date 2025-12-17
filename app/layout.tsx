@@ -47,7 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>oneGrow.Studio | Custom Dashboards</title>
+        <title>10B.Studio</title>
         <meta name="description" content="We build custom dashboards that help businesses stop drowning in spreadsheets." />
       </head>
       <body
