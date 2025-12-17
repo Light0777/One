@@ -146,7 +146,7 @@ export default function HeroSection() {
                     <Image
                         src="/case1.png"
                         alt="Dashboard preview"
-                        width={1080}
+                        width={1240}
                         height={1920}
                         className="rounded-xl sm:rounded-3xl"
                         quality={100}
@@ -158,9 +158,9 @@ export default function HeroSection() {
                             key={img}
                             src={`/dashcomp/${img}.png`}
                             alt="Dashboard preview"
-                            width={120}
+                            width={125}
                             height={180}
-                            className="rounded-xl w-full md:w-[200] h-auto"
+                            className="rounded-xl w-full md:w-[227]"
                             quality={100}
                         />
                     ))}
@@ -170,7 +170,7 @@ export default function HeroSection() {
                     <Image
                         src="/dashcomp/Group 17.png"
                         alt="Dashboard preview"
-                        width={330}
+                        width={380}
                         height={180}
                         className="rounded-3xl hidden md:block"
                         quality={100}
