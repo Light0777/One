@@ -115,7 +115,7 @@ export default function HeroSection() {
     return (
         <div ref={containerRef} className="relative bg-black">
             {/* Hero Content */}
-            <div className="h-20 sm:h-30 2xl:h-20"></div>
+            <div className="h-5 sm:h-15 2xl:h-20"></div>
             <div className="h-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-20 lg:pt-0">
 
                 {/* Available Badge */}
@@ -134,7 +134,7 @@ export default function HeroSection() {
                 {/* Main Headings */}
                 <div className="mt-4 sm:mt-6 md:mt-8 grid gap-3">
                     {/* Only add ref to the "CUSTOM" heading */}
-                    <h1 ref={customHeadingRef} className="scroll-m-20 text-center text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-normal tracking-normal font-anton leading-tight sm:leading-none text-white">
+                    <h1 ref={customHeadingRef} className="scroll-m-20 text-center text-3xl sm:text-7xl lg:text-8xl xl:text-[9rem] font-normal tracking-normal font-anton leading-tight sm:leading-none text-white">
                         CUSTOM DASHBOARDS.
                     </h1>
                 </div>
@@ -158,9 +158,9 @@ export default function HeroSection() {
                             key={img}
                             src={`/dashcomp/${img}.png`}
                             alt="Dashboard preview"
-                            width={125}
+                            width={190}
                             height={180}
-                            className="rounded-xl w-full md:w-[227]"
+                            className="rounded-xl w-[32.5%] md:w-[227]"
                             quality={100}
                         />
                     ))}
