@@ -70,14 +70,14 @@ button, a {
 
 /* Change text selection color globally */
 ::selection {
-  background-color: #fcd34d; /* yellow-300 */
-  color: #1f2937; /* gray-900 */
+  background-color: #ffffff; /* yellow-300 */
+  color: #000000; /* gray-900 */
 }
 
 /* For Firefox */
 ::-moz-selection {
-  background-color: #fcd34d;
-  color: #1f2937;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 /* Hide scrollbar for Chrome, Safari, Edge */

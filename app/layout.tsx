@@ -4,7 +4,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
-import { BackgroundProvider } from "./context/BackgroundContext";
 import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -53,9 +52,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${anton.variable} ${geistMonoLocal.variable} antialiased`}
       >
-        <BackgroundProvider>
           {children}
-        </BackgroundProvider>
       </body>
     </html>
   );

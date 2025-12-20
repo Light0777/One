@@ -148,11 +148,11 @@ export default function SimplePlatformsScroll() {
   }, []);
 
   return (
-    <section className="py-0 bg-white overflow-hidden">
+    <section className="py-0 bg-black overflow-hidden">
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-6 md:mb-24">
-          <p className="text-xs sm:text-lg text-zinc-600 dark:text-zinc-400 mx-auto mt-1">
+          <p className="text-xs sm:text-lg text-black-600 dark:text-black-400 mx-auto mt-1">
              Trusted Platforms My Dashboards Integrate With
           </p>
         </div>
@@ -160,8 +160,8 @@ export default function SimplePlatformsScroll() {
         {/* Logo Scroll */}
         <div className="relative">
           {/* Gradient overlays */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 md:w-64 bg-linear-to-r from-white to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 md:w-64 bg-linear-to-l from-white to-transparent z-10" />
+          <div className="absolute left-0 top-0 bottom-0 w-32 md:w-64 bg-linear-to-r from-black to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-32 md:w-64 bg-linear-to-l from-black to-transparent z-10" />
 
           {/* Logos container */}
           <div className="overflow-hidden">

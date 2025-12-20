@@ -41,27 +41,27 @@ const FAQPage = () => {
     };
 
     return (
-        <div className="min-h-screen bg-white grid items-center">
+        <div className="min-h-screen bg-black grid items-center">
             <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
                     {/* Left Column - Title */}
                     <div className="lg:w-1/2">
-                        <h1 className="text-md sm:text-lg md:text-xl lg:text-2xl font-bold tracking-tight text-black mb-3 sm:mb-6">
+                        <h1 className="text-md sm:text-lg md:text-xl lg:text-2xl font-bold tracking-tight text-white mb-3 sm:mb-6">
                             Frequently Asked Questions
                         </h1>
-                        <p className="text-sm sm:text-md md:text-lg lg:text-xl font-light text-gray-600 mb-8">
+                        <p className="text-sm sm:text-md md:text-lg lg:text-xl font-light text-white-600 mb-8">
                             Find answers to common questions about our custom dashboard development services.
                         </p>
 
                         {/* Contact Info */}
                         <div className="mt-8 p-0">
-                            <h3 className="text-md sm:text-lg md:text-xl lg:text-2xl font-bold text-black mb-2 sm:mb-4">Still have questions?</h3>
-                            <p className="text-gray-600 mb-4 text-sm md:text-md lg:text-lg font-light">
+                            <h3 className="text-md sm:text-lg md:text-xl lg:text-2xl font-bold text-white mb-2 sm:mb-4">Still have questions?</h3>
+                            <p className="text-white-600 mb-4 text-sm md:text-md lg:text-lg font-light">
                                 Can't find what you're looking for? Contact our team directly.
                             </p>
                             <a
                                 href="#"
-                                className="inline-flex items-center px-4 py-2 bg-black text-white font-light tracking-tight rounded-lg hover:bg-gray-800 transition-colors duration-300">
+                                className="inline-flex items-center px-4 py-2 bg-white text-black font-light tracking-tight rounded-lg hover:bg-white-800 transition-colors duration-300">
                                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                 </svg>
@@ -72,7 +72,7 @@ const FAQPage = () => {
 
                     {/* Right Column - FAQs */}
                     <div className="lg:w-1/2">
-                        <div className="divide-y divide-gray-100">
+                        <div className="divide-y divide-white-100">
                             {faqs.map((faq, index) => (
                                 <div key={index} className="py-4 sm:py-7 first:pt-0 last:pb-0">
                                     <button
@@ -80,14 +80,14 @@ const FAQPage = () => {
                                         className="w-full text-left flex items-start justify-between hover:opacity-80 transition-opacity duration-200 focus:outline-none"
                                     >
                                         <div className="flex-1">
-                                            <h3 className="text-sm sm:text-md md:text-lg lg:text-xl tracking-tight font-semibold text-gray-900">
+                                            <h3 className="text-sm sm:text-md md:text-lg lg:text-xl tracking-tight font-semibold text-white-900">
                                                 {faq.question}
                                             </h3>
                                             <div
                                                 className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-96 mt-4' : 'max-h-0'
                                                     }`}
                                             >
-                                                <p className="text-gray-600 text-sm sm:text-md md:text-lg lg:text-xl font-light">
+                                                <p className="text-white-600 text-sm sm:text-md md:text-lg lg:text-xl font-light">
                                                     {faq.answer}
                                                 </p>
                                             </div>

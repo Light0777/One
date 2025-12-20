@@ -1,7 +1,7 @@
 // components/HeroSection.tsx - UPDATED VERSION
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -12,71 +12,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function HeroSection() {
     const containerRef = useRef<HTMLDivElement>(null);
-    const aboutRef = useRef<HTMLDivElement>(null);
     const customHeadingRef = useRef<HTMLHeadingElement>(null);
-    const [bgProgress, setBgProgress] = useState(0);
 
-    useEffect(() => {
-        if (!containerRef.current || !aboutRef.current || !customHeadingRef.current) return;
-
-        const container = containerRef.current;
-        const aboutHeight = aboutRef.current.clientHeight;
-        const customHeading = customHeadingRef.current;
-
-        // Determine if mobile based on viewport width
-        const isMobile = window.innerWidth < 768;
-
-        // Shorter transition on mobile, longer on desktop
-        const endDistance = isMobile ? aboutHeight * 0.3 : aboutHeight * 0.5;
-
-        // Create timeline for smooth transition
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: container,
-                start: "top top",
-                end: `+=${endDistance}`,
-                scrub: true,
-                pin: false,
-                onUpdate: (self) => {
-                    const progress = self.progress;
-                    setBgProgress(progress);
-
-                    // Faster transition on mobile
-                    const adjustedProgress = isMobile ?
-                        Math.min(progress * 1.5, 1) :
-                        progress;
-
-                    // Interpolate background color from black to white
-                    const bgColor = gsap.utils.interpolate(
-                        { r: 0, g: 0, b: 0 },
-                        { r: 255, g: 255, b: 255 },
-                        adjustedProgress
-                    );
-
-                    // Apply background color
-                    gsap.to(container, {
-                        backgroundColor: `rgb(${bgColor.r}, ${bgColor.g}, ${bgColor.b})`,
-                        duration: 0.1,
-                    });
-
-                    // Update ONLY the "CUSTOM" heading color
-                    // Exclude the gradient "DASHBOARDS." heading
-                    const heroTextColor = adjustedProgress > 0.5 ? "#000000" : "#ffffff";
-
-                    // Target only the customHeadingRef
-                    gsap.to(customHeading, {
-                        color: heroTextColor,
-                        duration: 0.3,
-                    });
-                }
-            }
-        });
-
-        return () => {
-            tl.kill();
-            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-        };
-    }, []); // Empty dependency array since we check mobile inside
 
     // AboutUs data
     const leftLines = [
@@ -105,12 +42,6 @@ export default function HeroSection() {
         "– Smooth Animations",
         "– User Experience"
     ];
-
-    // Calculate colors based on progress
-    const textColor = (brightness: number = 1) =>
-        `rgb(${Math.floor(bgProgress * 255 * brightness)}, ${Math.floor(bgProgress * 255 * brightness)}, ${Math.floor(bgProgress * 255 * brightness)})`;
-
-    const dividerColor = `rgb(${Math.floor(bgProgress * 255 * 0.8)}, ${Math.floor(bgProgress * 255 * 0.8)}, ${Math.floor(bgProgress * 255 * 0.8)})`;
 
     return (
         <div ref={containerRef} className="relative bg-black">
@@ -186,8 +117,10 @@ export default function HeroSection() {
                 </div>
             </div>
 
+            <BrandsShowcase />
+
             {/* AboutUs Content */}
-            <div ref={aboutRef} className=" h-auto flex items-center justify-center">
+            <div className=" h-auto flex items-center justify-center">
                 <div className="relative z-10 w-full px-4 sm:px-6 sm:py-40">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
                         {/* Left Column */}
@@ -203,7 +136,6 @@ export default function HeroSection() {
                                     {line.text.split(' ').map((word, wordIndex) => (
                                         <span
                                             key={`left-${lineIndex}-${wordIndex}`}
-                                            style={{ color: textColor(0.1) }}
                                             className="inline-block mr-[0.2em] transition-colors duration-300"
                                         >
                                             {word}
@@ -220,7 +152,6 @@ export default function HeroSection() {
                                 {rightLine.text.split(' ').map((word, wordIndex) => (
                                     <span
                                         key={`right-${wordIndex}`}
-                                        style={{ color: textColor(0.1) }}
                                         className="inline-block mr-[0.2em] transition-colors duration-300"
                                     >
                                         {word}
@@ -230,8 +161,7 @@ export default function HeroSection() {
 
                             {/* Divider */}
                             <div
-                                style={{ backgroundColor: dividerColor }}
-                                className="w-full h-px transition-colors duration-300"
+                                className="w-full h-px transition-colors duration-300 bg-gray-700"
                             />
 
                             {/* Services list */}
@@ -242,7 +172,6 @@ export default function HeroSection() {
                                             <div className="relative z-10 flex items-center">
                                                 {/* Service text */}
                                                 <span
-                                                    style={{ color: textColor(0.3) }}
                                                     className="text-sm sm:text-base md:text-lg font-light tracking-wide transition-colors duration-300"
                                                 >
                                                     {service}

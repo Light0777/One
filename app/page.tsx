@@ -29,7 +29,6 @@ export default function Home() {
       <LoadingScreen isLoading={isLoading} onComplete={handleLoadingComplete} />
       <Navbar />
       <HeroSection />
-      <BrandsShowcase />
       <FAQPage />
       <Footer />
     </div>
