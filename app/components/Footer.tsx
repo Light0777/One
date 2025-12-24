@@ -76,7 +76,7 @@ const Footer = () => {
                             href="mailto:oneGrow.Studio@gmail.com" 
                             className="text-white transition-colors font-anton duration-300 text-xl sm:text-4xl inline-block footer-link"
                         >
-                            10Billion.Studio@gmail.com
+                            oneGrow.Studio@gmail.com
                         </a>
                     </div>
                 </div>
@@ -90,10 +90,10 @@ const Footer = () => {
                             ref={brandRef}
                             className="text-5xl sm:text-8xl lg:text-9xl text-white font-anton transition-colors duration-300 footer-link font-bold tracking-normal"
                         >
-                            10Billion.Studio
+                            oneGrow.Studio
                         </h1>
                         <p className="mt-8 text-gray-500 text-sm">
-                            © {new Date().getFullYear()} 10Billion.Studio. All rights reserved.
+                            © {new Date().getFullYear()} oneGrow.Studio. All rights reserved.
                         </p>
                     </div>
                 </div>

@@ -264,7 +264,7 @@ const Navbar = () => {
                     {/* Logo */}
                     <div className="z-60">
                         <a href="#" className="text-xl font-bold font-anton md:text-2xl md:font-bold tracking-wide text-black">
-                            <span className="text-white">10B/10</span>
+                            <span className="text-white">1Grow.Studio</span>
                         </a>
                     </div>
 

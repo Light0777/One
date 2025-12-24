@@ -96,14 +96,14 @@ const LoadingScreen = ({ isLoading = true, onComplete }: LoadingScreenProps) => 
     >
       {/* Main text in center */}
       <div className="text-center" ref={mainTextRef}>
-        <h1 className="text-white text-8xl sm:text-9xl md:text-[10rem] lg:text-[12rem] 2xl:text-[22rem] font-bold font-anton tracking-wide">10B/10</h1>
+        <h1 className="text-white text-8xl sm:text-9xl md:text-[10rem] lg:text-[12rem] 2xl:text-[15rem] font-bold font-anton tracking-wide">oneGrow.Studio</h1>
       </div>
 
       {/* Large percentage display bottom right */}
       <div className="absolute bottom-8 right-8" ref={percentageRef}>
         <div className="text-right">
           <div className="text-white font-mono text-8xl sm:text-9xl font-bold tracking-tighter">
-            {progress}<span className="text-yellow-300">%</span>
+            {progress}<span className="text-[#000000] bg-white">%</span>
           </div>
         </div>
       </div>

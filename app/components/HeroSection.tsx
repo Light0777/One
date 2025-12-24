@@ -18,7 +18,7 @@ export default function HeroSection() {
     // AboutUs data
     const leftLines = [
         {
-            text: "Hey, we're 10Billion.Studio and we help businesses stop drowning in spreadsheets.",
+            text: "Hey, we're oneGrow.Studio and we help businesses stop drowning in spreadsheets.",
             isBold: true
         },
         {

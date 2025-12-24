@@ -7,8 +7,8 @@ const FAQPage = () => {
 
     const faqs = [
         {
-            question: "What is 10Billion.Studio and what services do you offer?",
-            answer: "10Billion.Studio specializes in building custom dashboards and SaaS solutions that help businesses work faster, smarter, and with complete clarity. We offer end-to-end development services including custom dashboard design, SaaS application development, data visualization solutions, and business intelligence tools tailored to your specific needs."
+            question: "What is oneGrow.Studio and what services do you offer?",
+            answer: "oneGrow.Studio specializes in building custom dashboards and SaaS solutions that help businesses work faster, smarter, and with complete clarity. We offer end-to-end development services including custom dashboard design, SaaS application development, data visualization solutions, and business intelligence tools tailored to your specific needs."
         },
         {
             question: "How long does it take to build a custom dashboard?",
